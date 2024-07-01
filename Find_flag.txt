@@ -1,0 +1,12 @@
+Ini begitu masuk langsung pake command ini aja untuk nyari flagnya:
+
+find / -type f -name "*.txt" 2>/dev/null
+
+Atau
+
+find / -type f -name "user.txt" 2>/dev/null
+find / -type f -name "flag.txt" 2>/dev/null
+
+Kalau gadikasih akses ke /home/* folder atau command diatas ga ketemu flag pertama berarti harus 2 kali privescnya, harus running linpeas atau refer ke link linux privesc diatas dulu
+
+biasanya di home ada direktori buat usernya nanti cdnya ke /home/directoryuser, terus nanti coba ls kalau ada file atau coba pake cat untuk liat, kalau permission denied berarti harus dua kali privesc
