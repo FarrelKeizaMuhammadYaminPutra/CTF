@@ -1,0 +1,40 @@
+Btw nanti untuk privilege escalation jangan lupa run script ini ya, nanti liat outputnya terus cari potensi ke privilege escalationnya dimana:
+
+https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS 
+
+Download executable linuxnya disini:
+
+https://github.com/peass-ng/PEASS-ng/releases/download/20240630-b2cfbe8a/linpeas.sh
+
+Habis download pindahin ke mesin target pake curl atau apa bebas.
+
+Terus penggunaanya bisa liat tutorial aja:
+
+https://www.youtube.com/watch?v=TQEA8AEcn1g&pp=ygUHbGlucGVhcw%3D%3D
+https://www.youtube.com/watch?v=9xtIfiQ63Hk&pp=ugMICgJpZBABGAHKBQdsaW5wZWFz
+
+Kalau udah ketemu banyak googling
+
+oiya satu lagi
+
+Kan itu ada dua flag, user sama root
+Nanti liat kita dikasih akun apa, takutnya harus privilege escalation dua kali
+Jadi dari akun yang dikasih -> privesc ke user lain -> privesc ke root
+Tapi dari awal udah bisa dicoba nyari flag.txt, takutnya cuman perlu sekali privesc.
+
+Biasanya disini lokasinya:
+user.txt -> /home/userjtk/user.txt
+root.txt -> /root/root.txt
+
+Ini begitu masuk langsung pake command ini aja untuk nyari flagnya:
+
+find / -type f -name "*.txt" 2>/dev/null
+
+Atau
+
+find / -type f -name "user.txt" 2>/dev/null
+find / -type f -name "flag.txt" 2>/dev/null
+
+Kalau gadikasih akses ke /home/* folder atau command diatas ga ketemu flag pertama berarti harus 2 kali privescnya, harus running linpeas atau refer ke link linux privesc diatas dulu
+
+biasanya di home ada direktori buat usernya nanti cdnya ke /home/directoryuser, terus nanti coba ls kalau ada file atau coba pake cat untuk liat, kalau permission denied berarti harus dua kali privesc
